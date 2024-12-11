@@ -10,14 +10,14 @@
 // "The_Stealth-Warrior" gets converted to "TheStealthWarrior"
 
 function toCamelCase(str) {
-  if (!str) return "";
-  const words = str.split(/[-_]/);
-  return words
-    .map((word, index) => {
-      if (index === 0) return word;
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    })
-    .join("");
+  let arr = str.split("");
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] === "-" || arr[i] === "_") {
+      arr[i] = "";
+      arr[i + 1] = arr[i + 1].toUpperCase();
+    }
+  }
+  return arr.join("");
 }
 
 // 예제 실행
