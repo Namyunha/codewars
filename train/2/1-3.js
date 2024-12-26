@@ -13,17 +13,15 @@
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
 function duplicateCount(text) {
-  var lower = text.toLowerCase();
-  var count = 0;
-  var used = [];
-
-  lower.split("").forEach(function (letter) {
-    if (!used.includes(letter) && lower.split(letter).length - 1 > 1) {
+  const arr = text.toLowerCase().split("");
+  const usedText = [];
+  let count = 0;
+  arr.forEach((t) => {
+    if (!usedText.includes(t) && text.toLowerCase().split(t).length - 1 > 1) {
       count++;
-      used.push(letter);
+      usedText.push(t);
     }
   });
-
   return count;
 }
-console.log(duplicateCount("aabBcde"));
+console.log(duplicateCount("aA11"));
