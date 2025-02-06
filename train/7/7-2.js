@@ -3,16 +3,12 @@
 
 // Example 1:
 // a1 = [ "arp", "live", "strong"]
-
 // a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
-
 // returns ["arp", "live", "strong"]
 
 // Example 2:
 // a1 = ["tarp", "mice", "bull"]
-
 // a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
-
 // returns []
 
 // Notes:
@@ -21,19 +17,9 @@
 // Beware: In some languages r must be without duplicates.
 
 function inArray(array1, array2) {
-  const newArr = [];
-  array2.filter((a2) => {
-    for (let i = 0; i < array1.length; i++) {
-      if (a2.match(array1[i])) {
-        !newArr.includes(array1[i]) && newArr.push(array1[i]);
-        return array1[i];
-      }
-    }
-  });
-  return newArr;
+  return array1.filter((a1) => array2.find((a2) => a2.match(a1))).sort();
 }
 
 const a1 = ["arp", "live", "strong"];
-
 const a2 = ["lively", "alive", "harp", "sharp", "armstrong"];
 console.log(inArray(a1, a2));
