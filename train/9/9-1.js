@@ -6,8 +6,6 @@
 //          [7,8,9]]
 // snail(array) #=> [1,2,3,6,9,8,7,4,5]
 
-const array = [];
-
 snail = function (array) {
   if (array.length === 0 || array[0].length === 0) return [];
   const newArr = [];
@@ -35,5 +33,11 @@ snail = function (array) {
   }
   return array.length > 1 ? newArr : [];
 };
+
+const array = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
 
 console.log(snail(array));
